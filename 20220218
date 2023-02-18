@@ -1,0 +1,36 @@
+#백준     숫자 정사각형  1051
+x=0
+y=0
+
+n,m  = map(int,input().split()) #
+matrix = []
+n = y
+m = x
+for i in range(n):
+    tmp = list(map(int,list(input())))
+    matrix.append(tmp)
+    if m>n:
+        for i in range(n):
+            if matrix[i][i]==matrix[i][0]==matrix[0][0]==matrix[0][i]:
+                    print(n*n)
+                    n=n-1
+            else:
+                n=y
+                for j in range(n):
+                    for k in range(n):
+                        if matrix[j][j]==matrix[j][k]==matrix[k][k]==matrix[k][j]:
+                            print(n*m)
+
+
+    if m<n:
+        for i in range(m):
+            if matrix[i][i]==matrix[i][0]==matrix[0][0]==matrix[0][i]:
+                    print(m*m)
+                    m=m-1
+            else:
+                m=x
+                for j in range(m):
+                    for k in range(m):
+                        if matrix[j][j]==matrix[j][k]==matrix[k][k]==matrix[k][j]:
+                            print(n*m)
+print(matrix)
